@@ -3,7 +3,7 @@ services:
   rpki-validator2:
     image: rpki-validator2
     ports:
-      - 8080:8080
+      - ::1:8080:8080
       - 8282:8282
     volumes:
       - ./conf:/opt/docker/conf

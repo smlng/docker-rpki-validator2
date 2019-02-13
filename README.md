@@ -41,7 +41,12 @@ the yml file and change the values in section `ports`, the format is
 `HOST_PORT:DOCKER_PORT`. For instance to remap the web UI to `9090` change
 `8080:8080` to `9090:8080`.
 
-**Note(2)**: the container is set to restart always, i.e., on any errors or
+**Note(2)**: the HTTP port (default 8080) binds to localhost (::1) and is
+thus not reachable from the outside by default. It is recommended to use
+a HTTP proxy (apache or nginx) because there is no HTTPS support by the
+RPKI validator itself.
+
+**Note(3)**: the container is set to restart always, i.e., on any errors or
 restart of the host system.  See section `restart` in `docker-compose.yml` 
 to change this if needed.
 
