@@ -1,10 +1,12 @@
 version: '3.4'
 services:
   rpki-validator2:
+    build: .
     image: rpki-validator2
     ports:
       - ::1:8080:8080
       - 8282:8282
     volumes:
       - ./conf:/opt/docker/conf
+    user: rpki
     restart: always

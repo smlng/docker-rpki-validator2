@@ -13,6 +13,10 @@ WORKDIR /opt/docker
 ADD rpki-validator-app-*-dist.tar.gz .
 COPY startup.sh .
 
+RUN addgroup -S -g 323 rpki && adduser -S -u 323 -G rpki rpki
+RUN chown -R rpki:rpki /opt/docker
+
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk
+USER rpki
 
 CMD /opt/docker/startup.sh
