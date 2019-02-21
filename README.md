@@ -44,6 +44,8 @@ to change this if needed.
 
 Using `docker-compose` this is easy, simply run `sudo docker-compose up -d`.
 
+**Note**: the service is run as non-root, i.e., with user `rpki` (uid=323).
+
 ## Updating and Troubleshooting
 
 The `docker-compose` command may require super user rights, i.e., run it 
